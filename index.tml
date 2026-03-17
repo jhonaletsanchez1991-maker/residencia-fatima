@@ -3,145 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residencia Universitaria - La Francia/Guamal</title>
+    <title>Residencia Universitaria | 8 Habitaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         :root {
-            --github-dark: #0d1117;
-            --github-border: #30363d;
-            --github-text: #c9d1d9;
-            --accent-gold: #d4af37;
+            --primary: #d4af37; /* Dorado elegante */
+            --bg-dark: #0a0c10;
+            --card-bg: rgba(22, 27, 34, 0.8);
+            --border: rgba(48, 54, 61, 0.7);
+            --text-main: #f0f6fc;
+            --text-dim: #8b949e;
         }
 
+        * { margin: 0; padding: 0; box-box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--github-dark);
-            color: var(--github-text);
-            margin: 0;
-            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at top right, #1a1f26, transparent);
+            color: var(--text-main);
             line-height: 1.6;
         }
 
-        header {
-            border-bottom: 1px solid var(--github-border);
-            padding: 2rem 1rem;
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            background-color: #161b22;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(10, 12, 16, 0.8), rgba(10, 12, 16, 0.8)), 
+                        url('https://images.unsplash.com/photo-1555854817-5b2260d1bd64?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            border-bottom: 1px solid var(--border);
+            border-radius: 0 0 30px 30px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        .hero p { color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 
-        h1 { color: #f0f6fc; margin-bottom: 0.5rem; }
-        .tagline { color: #8b949e; font-size: 1.1rem; }
-
-        /* Estilo de "Cajas" tipo GitHub */
-        .box {
-            background-color: #161b22;
-            border: 1px solid var(--github-border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .features-grid {
+        /* Tarjetas de Información */
+        .grid-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: -40px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        .icon-box { color: var(--primary); font-size: 2rem; margin-bottom: 15px; }
+
+        /* Lista de Bondades */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .feature-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            padding: 10px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
         }
 
-        .feature-item i { color: var(--accent-gold); }
+        /* Botón de Acción */
+        .cta-container { text-align: center; margin: 50px 0; }
 
-        /* Botón de WhatsApp Flotante */
-        .btn-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            padding: 15px 25px;
+        .btn-main {
+            background: var(--primary);
+            color: black;
+            padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            display: flex;
+            font-weight: 800;
+            display: inline-flex;
             align-items: center;
             gap: 10px;
-            z-index: 1000;
+            transition: 0.3s;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 1rem;
-        }
+        .btn-main:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
 
-        .gallery img {
-            width: 100%;
-            border-radius: 6px;
-            border: 1px solid var(--github-border);
-        }
+        footer { text-align: center; padding: 40px; color: var(--text-dim); font-size: 0.8rem; border-top: 1px solid var(--border); }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #8b949e;
-            font-size: 0.9rem;
-            border-top: 1px solid var(--github-border);
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .features { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Residencia Universitaria Premium</h1>
-    <p class="tagline">Habitaciones cómodas y seguras en Manizales</p>
-</header>
+    <section class="hero">
+        <p>✦ Gran Oportunidad ✦</p>
+        <h1>ALQUILER DE HABITACIONES</h1>
+        <div style="font-size: 1.2rem; color: var(--text-dim);">Ubicación estratégica | Manizales</div>
+    </section>
 
-<div class="container">
-    
-    <div class="box">
-        <h3><i class="fas fa-info-circle"></i> Descripción de la Propiedad</h3>
-        <p>Ubicada estratégicamente cerca a las principales <strong>zonas universitarias y centros comerciales</strong>. Ideal para estudiantes que buscan un ambiente tranquilo, sobrio y funcional.</p>
-        
-        <div class="features-grid">
-            <div class="feature-item"><i class="fas fa-bed"></i> 8 Habitaciones</div>
-            <div class="feature-item"><i class="fas fa-bath"></i> 2 Baños amplios</div>
-            <div class="feature-item"><i class="fas fa-tshirt"></i> Patio de ropas</div>
-            <div class="feature-item"><i class="fas fa-utensils"></i> Cocina integral</div>
-            <div class="feature-item"><i class="fas fa-map-marker-alt"></i> Estrato 3</div>
-            <div class="feature-item"><i class="fas fa-university"></i> Zona Universitaria</div>
+    <div class="container">
+        <div class="grid-info">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-home"></i></div>
+                <h3>La Propiedad</h3>
+                <p>Amplia casa diseñada para la comodidad. Ideal para quienes buscan cercanía a todo en un ambiente tranquilo.</p>
+                <div class="features">
+                    <div class="feature-item"><i class="fas fa-bed"></i> 8 Habitaciones</div>
+                    <div class="feature-item"><i class="fas fa-bath"></i> 2 Baños</div>
+                    <div class="feature-item"><i class="fas fa-tshirt"></i> Gran Patio</div>
+                    <div class="feature-item"><i class="fas fa-layer-group"></i> Estrato 3</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Ubicación</h3>
+                <p>Situada en un punto clave de la ciudad con acceso inmediato a servicios principales.</p>
+                <div class="features" style="grid-template-columns: 1fr;">
+                    <div class="feature-item"><i class="fas fa-university"></i> Cerca a Zonas Universitarias</div>
+                    <div class="feature-item"><i class="fas fa-shopping-cart"></i> Centros Comerciales</div>
+                    <div class="feature-item"><i class="fas fa-bus"></i> Excelente transporte</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-container">
+            <h2>¿Te interesa conocerla?</h2>
+            <p style="color: var(--text-dim); margin-bottom: 25px;">Agenda una visita hoy mismo y asegura tu lugar.</p>
+            <a href="https://wa.me/573218120855?text=Hola,%20estoy%20interesado%20en%20las%20habitaciones" class="btn-main">
+                <i class="fab fa-whatsapp"></i> CONTACTAR POR WHATSAPP
+            </a>
         </div>
     </div>
 
-    <div class="box">
-        <h3><i class="fas fa-camera"></i> Galería</h3>
-        <p>Espacios iluminados y recién adecuados.</p>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/400x300?text=Habitación+Principal" alt="Habitación">
-            <img src="https://via.placeholder.com/400x300?text=Cocina+Amplia" alt="Cocina">
-        </div>
-    </div>
-
-</div>
-
-<a href="https://wa.me/573123456789?text=Hola,%20estoy%20interesado%20en%20las%20habitaciones" class="btn-whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i> Preguntar por disponibilidad
-</a>
-
-<footer>
-    &copy; 2026 Residencia Manizales - Diseño Profesional Sobrio
-</footer>
+    <footer>
+        © 2026 · ALQUILER DE HABITACIONES · MANIZALES · CONTACTO: 321 812 0855
+    </footer>
 
 </body>
 </html>
