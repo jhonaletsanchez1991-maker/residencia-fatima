@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencia Universitaria - La Francia/Guamal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --github-dark: #0d1117;
+            --github-border: #30363d;
+            --github-text: #c9d1d9;
+            --accent-gold: #d4af37;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--github-dark);
+            color: var(--github-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            border-bottom: 1px solid var(--github-border);
+            padding: 2rem 1rem;
+            text-align: center;
+            background-color: #161b22;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 { color: #f0f6fc; margin-bottom: 0.5rem; }
+        .tagline { color: #8b949e; font-size: 1.1rem; }
+
+        /* Estilo de "Cajas" tipo GitHub */
+        .box {
+            background-color: #161b22;
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item i { color: var(--accent-gold); }
+
+        /* Botón de WhatsApp Flotante */
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid var(--github-border);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--github-border);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Residencia Universitaria Premium</h1>
+    <p class="tagline">Habitaciones cómodas y seguras en Manizales</p>
+</header>
+
+<div class="container">
+    
+    <div class="box">
+        <h3><i class="fas fa-info-circle"></i> Descripción de la Propiedad</h3>
+        <p>Ubicada estratégicamente cerca a las principales <strong>zonas universitarias y centros comerciales</strong>. Ideal para estudiantes que buscan un ambiente tranquilo, sobrio y funcional.</p>
+        
+        <div class="features-grid">
+            <div class="feature-item"><i class="fas fa-bed"></i> 8 Habitaciones</div>
+            <div class="feature-item"><i class="fas fa-bath"></i> 2 Baños amplios</div>
+            <div class="feature-item"><i class="fas fa-tshirt"></i> Patio de ropas</div>
+            <div class="feature-item"><i class="fas fa-utensils"></i> Cocina integral</div>
+            <div class="feature-item"><i class="fas fa-map-marker-alt"></i> Estrato 3</div>
+            <div class="feature-item"><i class="fas fa-university"></i> Zona Universitaria</div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h3><i class="fas fa-camera"></i> Galería</h3>
+        <p>Espacios iluminados y recién adecuados.</p>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/400x300?text=Habitación+Principal" alt="Habitación">
+            <img src="https://via.placeholder.com/400x300?text=Cocina+Amplia" alt="Cocina">
+        </div>
+    </div>
+
+</div>
+
+<a href="https://wa.me/573123456789?text=Hola,%20estoy%20interesado%20en%20las%20habitaciones" class="btn-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i> Preguntar por disponibilidad
+</a>
+
+<footer>
+    &copy; 2026 Residencia Manizales - Diseño Profesional Sobrio
+</footer>
+
+</body>
+</html>
